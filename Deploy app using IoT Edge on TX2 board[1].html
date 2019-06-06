@@ -1,0 +1,2991 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List
+href="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/filelist.xml">
+<link rel=Edit-Time-Data
+href="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Patrizzio Virgili</o:Author>
+  <o:LastAuthor>Armando Blanco</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>349</o:TotalTime>
+  <o:Created>2019-06-06T22:02:00Z</o:Created>
+  <o:LastSaved>2019-06-06T22:02:00Z</o:LastSaved>
+  <o:Pages>13</o:Pages>
+  <o:Words>1377</o:Words>
+  <o:Characters>7850</o:Characters>
+  <o:Lines>65</o:Lines>
+  <o:Paragraphs>18</o:Paragraphs>
+  <o:CharactersWithSpaces>9209</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:CustomDocumentProperties>
+  <o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled dt:dt="string">True</o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled>
+  <o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId dt:dt="string">72f988bf-86f1-41af-91ab-2d7cd011db47</o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId>
+  <o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner dt:dt="string">pavirgil@microsoft.com</o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner>
+  <o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate dt:dt="string">2019-02-24T16:40:16.6228570Z</o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate>
+  <o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name dt:dt="string">General</o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name>
+  <o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application dt:dt="string">Microsoft Azure Information Protection</o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application>
+  <o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId dt:dt="string">a9f438cf-2725-46e3-b30f-80dbbbc1b7d9</o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId>
+  <o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method
+   dt:dt="string">Automatic</o:MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method>
+  <o:Sensitivity dt:dt="string">General</o:Sensitivity>
+ </o:CustomDocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData
+href="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/themedata.thmx">
+<link rel=colorSchemeMapping
+href="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:HideSpellingErrors/>
+  <w:HideGrammaticalErrors/>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>ES-CL</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:decorative;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536858881 -1073732485 9 0 511 0;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073732485 9 0 511 0;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1073683329 9 0 511 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-520091905 1073806591 9 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:ES-CL;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2F5496;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	mso-font-kerning:0pt;
+	mso-ansi-language:ES-CL;
+	font-weight:normal;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-style-next:Normal;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:13.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2F5496;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	mso-ansi-language:ES-CL;
+	font-weight:normal;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;
+	mso-ansi-language:ES-CL;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	mso-style-type:export-only;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;
+	mso-ansi-language:ES-CL;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	mso-style-type:export-only;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;
+	mso-ansi-language:ES-CL;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	mso-style-type:export-only;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;
+	mso-ansi-language:ES-CL;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	mso-themecolor:hyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#954F72;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Segoe UI",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-ansi-language:ES-CL;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:ES-CL;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:ES-CL;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:ES-CL;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:ES-CL;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2F5496;
+	mso-themecolor:accent1;
+	mso-themeshade:191;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Title;
+	mso-ansi-font-size:28.0pt;
+	mso-bidi-font-size:28.0pt;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2F5496;
+	mso-themecolor:accent1;
+	mso-themeshade:191;}
+span.pl-c
+	{mso-style-name:pl-c;
+	mso-style-unhide:no;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	mso-ascii-font-family:"Segoe UI";
+	mso-hansi-font-family:"Segoe UI";
+	mso-bidi-font-family:"Segoe UI";}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:11.0pt;
+	mso-ansi-font-size:11.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:ES-CL;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/header.html") fs;
+	mso-footnote-continuation-separator:url("Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/header.html") fcs;
+	mso-endnote-separator:url("Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/header.html") es;
+	mso-endnote-continuation-separator:url("Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/header.html") ecs;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:56363424;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-170862372 873070617 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l0:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:53.4pt;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:89.4pt;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:125.4pt;
+	text-indent:-9.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:161.4pt;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:197.4pt;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:233.4pt;
+	text-indent:-9.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:269.4pt;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:305.4pt;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:341.4pt;
+	text-indent:-9.0pt;}
+@list l1
+	{mso-list-id:281573946;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1677241422 873070607 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l1:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l1:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;}
+@list l1:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:90.0pt;
+	text-indent:-9.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:126.0pt;
+	text-indent:-18.0pt;}
+@list l1:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:162.0pt;
+	text-indent:-18.0pt;}
+@list l1:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:198.0pt;
+	text-indent:-9.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:234.0pt;
+	text-indent:-18.0pt;}
+@list l1:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:270.0pt;
+	text-indent:-18.0pt;}
+@list l1:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:306.0pt;
+	text-indent:-9.0pt;}
+@list l2
+	{mso-list-id:435633576;
+	mso-list-type:hybrid;
+	mso-list-template-ids:747303756 873070617 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l2:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;}
+@list l2:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-18.0pt;}
+@list l2:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:126.0pt;
+	text-indent:-9.0pt;}
+@list l2:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:162.0pt;
+	text-indent:-18.0pt;}
+@list l2:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:198.0pt;
+	text-indent:-18.0pt;}
+@list l2:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:234.0pt;
+	text-indent:-9.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:270.0pt;
+	text-indent:-18.0pt;}
+@list l2:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:306.0pt;
+	text-indent:-18.0pt;}
+@list l2:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:342.0pt;
+	text-indent:-9.0pt;}
+@list l3
+	{mso-list-id:514729255;
+	mso-list-type:hybrid;
+	mso-list-template-ids:50603800 873070617 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l3:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:53.4pt;
+	text-indent:-18.0pt;}
+@list l3:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:89.4pt;
+	text-indent:-18.0pt;}
+@list l3:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:125.4pt;
+	text-indent:-9.0pt;}
+@list l3:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:161.4pt;
+	text-indent:-18.0pt;}
+@list l3:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:197.4pt;
+	text-indent:-18.0pt;}
+@list l3:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:233.4pt;
+	text-indent:-9.0pt;}
+@list l3:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:269.4pt;
+	text-indent:-18.0pt;}
+@list l3:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:305.4pt;
+	text-indent:-18.0pt;}
+@list l3:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:341.4pt;
+	text-indent:-9.0pt;}
+@list l4
+	{mso-list-id:754089351;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1495485932 873070607 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l4:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l4:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l4:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l4:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l5
+	{mso-list-id:893155862;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1495485932 873070607 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l5:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l5:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l5:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l5:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l6
+	{mso-list-id:1364943183;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-844604652 873070617 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l6:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:71.4pt;
+	text-indent:-18.0pt;}
+@list l6:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:107.4pt;
+	text-indent:-18.0pt;}
+@list l6:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:143.4pt;
+	text-indent:-9.0pt;}
+@list l6:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:179.4pt;
+	text-indent:-18.0pt;}
+@list l6:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:215.4pt;
+	text-indent:-18.0pt;}
+@list l6:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:251.4pt;
+	text-indent:-9.0pt;}
+@list l6:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:287.4pt;
+	text-indent:-18.0pt;}
+@list l6:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:323.4pt;
+	text-indent:-18.0pt;}
+@list l6:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:359.4pt;
+	text-indent:-9.0pt;}
+@list l7
+	{mso-list-id:1480927731;
+	mso-list-type:hybrid;
+	mso-list-template-ids:313699756 873070593 873070595 873070597 873070593 873070595 873070597 873070593 873070595 873070597;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l7:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l7:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l7:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l7:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l7:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l7:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l7:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l7:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l8
+	{mso-list-id:1708942752;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-170862372 873070617 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l8:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:53.4pt;
+	text-indent:-18.0pt;}
+@list l8:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:89.4pt;
+	text-indent:-18.0pt;}
+@list l8:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:125.4pt;
+	text-indent:-9.0pt;}
+@list l8:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:161.4pt;
+	text-indent:-18.0pt;}
+@list l8:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:197.4pt;
+	text-indent:-18.0pt;}
+@list l8:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:233.4pt;
+	text-indent:-9.0pt;}
+@list l8:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:269.4pt;
+	text-indent:-18.0pt;}
+@list l8:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:305.4pt;
+	text-indent:-18.0pt;}
+@list l8:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:341.4pt;
+	text-indent:-9.0pt;}
+@list l9
+	{mso-list-id:1743092620;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-680344626 873070593 873070595 873070597 873070593 873070595 873070597 873070593 873070595 873070597;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l9:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l9:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l9:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l9:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l9:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l9:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l9:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l9:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l10
+	{mso-list-id:1882284408;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-191215686 873070617 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l10:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:53.4pt;
+	text-indent:-18.0pt;}
+@list l10:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:89.4pt;
+	text-indent:-18.0pt;}
+@list l10:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:125.4pt;
+	text-indent:-9.0pt;}
+@list l10:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:161.4pt;
+	text-indent:-18.0pt;}
+@list l10:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:197.4pt;
+	text-indent:-18.0pt;}
+@list l10:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:233.4pt;
+	text-indent:-9.0pt;}
+@list l10:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:269.4pt;
+	text-indent:-18.0pt;}
+@list l10:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:305.4pt;
+	text-indent:-18.0pt;}
+@list l10:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:341.4pt;
+	text-indent:-9.0pt;}
+@list l11
+	{mso-list-id:2122914151;
+	mso-list-type:hybrid;
+	mso-list-template-ids:50603800 873070617 873070617 873070619 873070607 873070617 873070619 873070607 873070617 873070619;}
+@list l11:level1
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:53.4pt;
+	text-indent:-18.0pt;}
+@list l11:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:89.4pt;
+	text-indent:-18.0pt;}
+@list l11:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:125.4pt;
+	text-indent:-9.0pt;}
+@list l11:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:161.4pt;
+	text-indent:-18.0pt;}
+@list l11:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:197.4pt;
+	text-indent:-18.0pt;}
+@list l11:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:233.4pt;
+	text-indent:-9.0pt;}
+@list l11:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:269.4pt;
+	text-indent:-18.0pt;}
+@list l11:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:305.4pt;
+	text-indent:-18.0pt;}
+@list l11:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:341.4pt;
+	text-indent:-9.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:8.0pt;
+	mso-para-margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-ansi-language:ES-CL;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2049"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='tab-interval:35.4pt'>
+
+<div class=WordSection1>
+
+<p class=MsoTitleCxSpFirst align=center style='text-align:center'><span
+style='mso-ansi-language:EN-US'>HOWTO<o:p></o:p></span></p>
+
+<p class=MsoTitleCxSpLast align=center style='text-align:center'><span
+style='mso-ansi-language:EN-US'>DEPLOY APP TO NVIDIA TX2 BOARD USING AZURE IOT
+EDGE<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-US'>This walkthrough is
+comprised on 4 main activities:<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l4 level1 lfo1'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Install
+required software on Nvidia TX2 board<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l4 level1 lfo1'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Configure
+Azure IoT Edge on TX2 board<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l4 level1 lfo1'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Prepare
+containers to use board’s GPU capabilities<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l4 level1 lfo1'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Deploy an
+app using Azure IoT Edge<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span style='mso-ansi-language:EN-US'>Pre-requirements<o:p></o:p></span></h1>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l9 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Nvidia TX2 board.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l9 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+lang=ES-CL><a href="https://developer.nvidia.com/embedded/dlc/jetpack-l4t-3_3"><span
+lang=EN-US style='mso-ansi-language:EN-US'>JetPack 3.3</span></a></span><span
+style='mso-ansi-language:EN-US'> from Nvidia official site<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l9 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Local computer running Linux in a graphical environment
+(necessary to connect TX2 card and install JetPack 3.3)<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l9 level1 lfo4'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>An Azure subscription and privileges to create
+resources.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h1 style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Calibri Light";mso-fareast-theme-font:major-latin;
+mso-bidi-font-family:"Calibri Light";mso-bidi-theme-font:major-latin;
+mso-ansi-language:EN-US'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Install required software on Nvidia TX2 board<o:p></o:p></span></h1>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Install base software from JetPack 3.3<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:35.4pt'><span style='mso-ansi-language:
+EN-US'>This will install all the base software for TX2, including the ability
+to use containers on the board. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Connect
+TX2 card and configure it to have internet connection. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Run
+ifconfig on TX2 and take a note on the IP shown.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Download </span><span
+lang=ES-CL><a href="https://developer.nvidia.com/embedded/dlc/jetpack-l4t-3_3"><span
+lang=EN-US style='mso-ansi-language:EN-US'>JetPack 3.3</span></a></span><span
+style='mso-ansi-language:EN-US'> from Nvidia in the local computer running
+Linux. Membership is required to download but is free.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>If needed,
+change permission to run the installation file:<br>
+chmod +x JetPack-L4T-3.3-linux-x64_b39.run<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Run
+installation file<br>
+./ JetPack-L4T-3.3-linux-x64_b39.run<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>It is
+strongly recommended to define a new folder for all the software to be
+downloaded during the installation process. Those files will be required in
+next sections.<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1042" type="#_x0000_t75"
+ style='width:312pt;height:229pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image001.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=312 height=229
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image001.png"
+v:shapes="Picture_x0020_1"><![endif]></span><span style='mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Select Jetson
+TX2 as development environment.<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_2" o:spid="_x0000_i1041" type="#_x0000_t75" style='width:314pt;
+ height:228pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image002.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=314 height=228
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image002.png"
+v:shapes="Picture_x0020_2"><![endif]></span><span style='mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>h.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Add sudo
+password to stat installation<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_3" o:spid="_x0000_i1040" type="#_x0000_t75" style='width:263pt;
+ height:122pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image003.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=263 height=122
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image003.png"
+v:shapes="Picture_x0020_3"><![endif]></span><span style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Install
+all packages selecting “Full” installation in the upper right corner of the
+screen:<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_4" o:spid="_x0000_i1039" type="#_x0000_t75" style='width:307pt;
+ height:267pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image004.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=307 height=267
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image004.png"
+v:shapes="Picture_x0020_4"><![endif]></span><span style='mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>j.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>If the TX2
+board has connection to internet, select this network layout<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_5" o:spid="_x0000_i1038" type="#_x0000_t75" style='width:321pt;
+ height:233pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image005.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=321 height=233
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image005.png"
+v:shapes="Picture_x0020_5"><![endif]></span><span style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>k.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>When a
+pop-up screen appears, select the steps to put TX2 board in the FORCE USB
+Recovery Mode.<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_6" o:spid="_x0000_i1037" type="#_x0000_t75" style='width:401pt;
+ height:244pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image006.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=401 height=244
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image006.png"
+v:shapes="Picture_x0020_6"><![endif]></span><span style='mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>l.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Installation
+of components will begin.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l1 level2 lfo2'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>m.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>When
+installation is finished DO NOT select “Remove downloaded files” option. Those
+files will be needed in next sections.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:54.0pt;mso-add-space:auto'><span
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Installing CUDA libraries natively on TX2 board<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:35.4pt'><span style='mso-ansi-language:
+EN-US'>After JetPack 3.3 installation and flashing the device we proceed to
+install CUDA libraries on the TX2<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:54.0pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l2 level1 lfo6'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Go to
+JetPack’s installation folder (</span><span style='font-size:10.0pt;line-height:
+107%;font-family:Consolas;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:
+minor-bidi;color:#24292E;mso-ansi-language:EN-US'>jetpack_download)</span><span
+style='mso-ansi-language:EN-US'>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:54.0pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l2 level1 lfo6'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Execute
+following commands:<br>
+$ sudo su -<br>
+$ dpkg -i cuda-repo-l4t-9-0-local_9.0.252-1_arm64.deb<span
+style='mso-spacerun:yes'>   </span><br>
+$ apt-key add /var/cuda-repo-9-0-local/7fa2af80.pub<span
+style='mso-spacerun:yes'>   </span><br>
+$ apt-get update<span style='mso-spacerun:yes'>   </span><br>
+$ apt-get install cuda-toolkit-9-0 -y <br>
+$ dpkg -i cuda-repo-l4t-9-0-local_9.0.252-1_arm64.deb<o:p></o:p></span></p>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>(Optional) Installing TensorFlow libraries
+natively on TX2 board<o:p></o:p></span></h2>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:71.4pt;margin-bottom:.0001pt;mso-add-space:auto;text-indent:
+-18.0pt;line-height:normal;mso-list:l6 level1 lfo7'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>These
+commands allows to install TensorFlow natively in the board:<br>
+</span><span style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";color:#24292E;
+background:#F6F8FA;mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>sudo
+apt-get update<br>
+sudo apt-get install python3-dev<br>
+wget </span><span lang=ES-CL><a href="https://bootstrap.pypa.io/get-pip.py"><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>https://bootstrap.pypa.io/get-pip.py</span></a></span><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><br>
+sudo -H python get-pip.py<br>
+# sudo -H python3 get-pip.py (in case python isn’t available)<br>
+sudo -H pip install --extra-index-url
+https://developer.download.nvidia.com/compute/redist/jp33 tensorflow-gpu</span><span
+style='mso-ansi-language:EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<h1 style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Calibri Light";mso-fareast-theme-font:major-latin;
+mso-bidi-font-family:"Calibri Light";mso-bidi-theme-font:major-latin;
+mso-ansi-language:EN-US'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Configure Azure IoT Edge on TX2 board<o:p></o:p></span></h1>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Install Azure IoT Edge runtime on TX2<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:35.4pt'><span style='mso-ansi-language:
+EN-US'>This will install Azure IoT Edge in multi-architecture mode<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#6A737D;mso-ansi-language:EN-US;
+mso-fareast-language:ES-CL'># enable installation of 32 bit packages</span><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>sudo dpkg
+--add-architecture armhf<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#6A737D;mso-ansi-language:EN-US;
+mso-fareast-language:ES-CL'># install compilers and libraries</span><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>sudo apt-get install
+libc-bin libc-bin libc-dev-bin libc6 libc6:armhf libc6-dev libgcc1
+libgcc1:armhf locales<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>wget
+http://ports.ubuntu.com/ubuntu-ports/pool/main/h/hostname/hostname_3.16ubuntu2_armhf.deb<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>sudo dpkg -i
+./hostname_3.16ubuntu2_armhf.deb<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>wget </span><span
+lang=ES-CL><a
+href="http://ftp.us.debian.org/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2q-2_armhf.deb"><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>http://ftp.us.debian.org/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2q-2_armhf.deb</span></a></span><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>sudo dpkg -i libssl1.0.2_1.0.2q-2_armhf.deb
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>sudo apt-get install -f<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#6A737D;mso-ansi-language:EN-US;
+mso-fareast-language:ES-CL'># If you get any error message, it may be related
+to the fact you have a non-compatible </span><span style='font-size:10.0pt;
+font-family:Consolas;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
+"Times New Roman";color:#24292E;background:#F6F8FA;mso-ansi-language:EN-US;
+mso-fareast-language:ES-CL'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#6A737D;mso-ansi-language:EN-US;
+mso-fareast-language:ES-CL'># version of libssl like the libsll-dev version. In
+this case, just purge it with<span style='mso-spacerun:yes'>  </span></span><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#6A737D;mso-ansi-language:EN-US;
+mso-fareast-language:ES-CL'># sudo apt-get purge libssl-dev</span><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>wget
+https://aka.ms/libiothsm-std-linux-armhf-latest -O libiothsm-std.deb<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>sudo dpkg -i
+./libiothsm-std.deb<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>wget
+https://aka.ms/iotedged-linux-armhf-latest -O iotedge.deb<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:35.4pt;margin-bottom:.0001pt;line-height:normal'><span
+style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>sudo dpkg -i ./iotedge.deb<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:35.4pt'><span style='font-size:10.0pt;
+line-height:107%;font-family:Consolas;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US;mso-fareast-language:ES-CL'>sudo apt-get install -f</span><span
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Create a device in Azure IoT Hub portal<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:35.4pt'><span style='mso-ansi-language:
+EN-US'>This step will create a device in Azure IoT Hub and configure it for running<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level1 lfo9'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Login in Azure portal and login with your credentials<br>
+</span><span lang=ES-CL><a href="https://ms.portal.azure.com"><span lang=EN-US
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;background:#F6F8FA;mso-ansi-language:
+EN-US'>https://ms.portal.azure.com</span></a></span><span style='font-size:
+10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level1 lfo9'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Go to IoT Hub service. If there isn’t an IoT Hub
+created, please follow this tutorial to deploy one instance:</span><span
+style='mso-ansi-language:EN-US'> </span><span lang=ES-CL><a
+href="https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal"><span
+lang=EN-US style='font-size:10.0pt;line-height:107%;font-family:Consolas;
+mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+background:#F6F8FA;mso-ansi-language:EN-US'>https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal</span></a></span><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level1 lfo9'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Create an IoT Edge device. IoT Hub -&gt; IoT Edge
+-&gt; Add an IoT Device<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_9" o:spid="_x0000_i1036" type="#_x0000_t75" style='width:302pt;
+ height:245pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image007.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=302 height=245
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image007.png"
+v:shapes="Picture_x0020_9"><![endif]></span><span style='font-size:10.0pt;
+line-height:107%;font-family:Consolas;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level1 lfo9'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>d.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Complete “Device ID” field with a name representative
+for the edge device. Then click on “Save” button.<br>
+<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_10" o:spid="_x0000_i1035" type="#_x0000_t75" style='width:264pt;
+ height:267pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image008.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=264 height=267
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image008.png"
+v:shapes="Picture_x0020_10"><![endif]></span><span style='font-size:10.0pt;
+line-height:107%;font-family:Consolas;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level1 lfo9'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>e.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>After creation, select the new device create from the
+list and from “Device details” screen copy and take note of “Connection string
+(primary key)” field. It will be used in the next section.<br>
+<br>
+<span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_12"
+ o:spid="_x0000_i1034" type="#_x0000_t75" style='width:412pt;height:154pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image009.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=412 height=154
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image009.png"
+v:shapes="Picture_x0020_12"><![endif]></span><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level1 lfo9'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>f.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Define the arm images to use in IoT Edge native
+modules (EdgeAgent and EdgeHub). From previous screen, select “Set Modules” and
+then “Configure advance Edge Runtime settings”<br>
+<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_13" o:spid="_x0000_i1033" type="#_x0000_t75" style='width:309pt;
+ height:365pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image010.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=309 height=365
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image010.png"
+v:shapes="Picture_x0020_13"><![endif]></span><span style='font-size:10.0pt;
+line-height:107%;font-family:Consolas;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;mso-ansi-language:
+EN-US'><br>
+<br>
+Then change EdgeAgent and EdgeHub as follows<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo9'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>EdgeHub: “mcr.microsoft.com/azureiotedge-hub:1.0” -&gt;
+“mcr.microsoft.com/azureiotedge-hub:1.0.4-linux-arm32v7”<br>
+<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_14" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:302pt;
+ height:120pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image011.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=302 height=120
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image011.png"
+v:shapes="Picture_x0020_14"><![endif]></span><span style='font-size:10.0pt;
+line-height:107%;font-family:Consolas;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo9'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>EdgeHub: Scroll down and change “mcr.microsoft.com/azureiotedge-agent:1.0”
+-&gt; “mcr.microsoft.com/azureiotedge-agent:1.0.4-linux-arm32v7”<br>
+<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_15" o:spid="_x0000_i1031" type="#_x0000_t75" style='width:316pt;
+ height:183pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image012.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=316 height=183
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image012.png"
+v:shapes="Picture_x0020_15"><![endif]></span><span style='font-size:10.0pt;
+line-height:107%;font-family:Consolas;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo9'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Click on “SAVE” button.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:89.4pt;mso-add-space:auto'><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Configure Azure IoT Edge on TX2<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span style='mso-ansi-language:
+EN-US'>In this step, we will change the default images in the IoT Edge
+configuration file to support arm64.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level1 lfo8'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Open and edit config file:<br>
+sudo nano /etc/iotedge/config.yaml<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level1 lfo8'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Modify device_connection_string (line26) replacing
+default text by connection string gotten from previous section<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level1 lfo8'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>c.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Modify edgeAgent image definition (line 74)<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level2 lfo8'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Default: image: &quot;mcr.microsoft.com/azureiotedge-agent:1.0&quot;<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l8 level2 lfo8'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>b.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Modified: image: &quot;mcr.microsoft.com/azureiotedge-agent:1.0.4-linux-arm32v7&quot;<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:53.4pt;mso-add-space:auto;
+text-indent:-18.0pt;mso-list:l8 level1 lfo8'><![if !supportLists]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:#24292E;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>d.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+style='font-size:10.0pt;line-height:107%;font-family:Consolas;mso-bidi-font-family:
+"Times New Roman";mso-bidi-theme-font:minor-bidi;color:#24292E;background:#F6F8FA;
+mso-ansi-language:EN-US'>Restart IoT Edge service:<br>
+sudo systemctl restart iotedge<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h1 style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Calibri Light";mso-fareast-theme-font:major-latin;
+mso-bidi-font-family:"Calibri Light";mso-bidi-theme-font:major-latin;
+mso-ansi-language:EN-US'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Prepare containers to use board’s GPU
+capabilities<o:p></o:p></span></h1>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Create base container for ARM64 and GPU<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:35.4pt'><span style='color:red;
+mso-ansi-language:EN-US'>PENDING TO ADD INFORMATION ABOUT BASE CONTAINER FOR ARM64<o:p></o:p></span></p>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Customize container with custom app (your app)<o:p></o:p></span></h2>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;color:red;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='color:red;mso-ansi-language:EN-US'>PENDING TO ADD INFORMATION ABOUT BASE
+CONTAINER FOR ARM64<o:p></o:p></span></p>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Create a private image registry in Azure
+Container Registry<o:p></o:p></span></h2>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l10 level1 lfo10'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Create an
+Azure Container Registry service following this </span><span lang=ES-CL><a
+href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal"><span
+lang=EN-US style='mso-ansi-language:EN-US'>tutorial</span></a></span><span
+style='mso-ansi-language:EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l10 level1 lfo10'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Go to your
+recently deployed Container Registry in Azure and click on “Access Key” option<br>
+s<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l10 level1 lfo10'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Take note
+on your Login Server name, Username and Password.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto'><span style='mso-ansi-language:EN-US;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_16" o:spid="_x0000_i1030" type="#_x0000_t75" style='width:395pt;
+ height:178pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image013.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=395 height=178
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image013.png"
+v:shapes="Picture_x0020_16"><![endif]></span><span style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:53.4pt;mso-add-space:auto'><span
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h2 style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;mso-ansi-language:EN-US'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Upload app image to Azure Container Registry<o:p></o:p></span></h2>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l3 level1 lfo11'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Allow
+Docker to connect your private Azure Container Registry. You must use your
+credential noted in previous section:<br>
+</span><span style='font-size:10.5pt;line-height:107%;font-family:Consolas;
+mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+color:black;background:#FAFAFA;mso-ansi-language:EN-US'>docker login ${YOUR_LOGIN_SERVER}<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span><span style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l3 level1 lfo11'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span>Tag your image application (Optional)<br>
+</span><span style='font-size:10.5pt;line-height:107%;font-family:Consolas;
+mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+color:black;background:#FAFAFA;mso-ansi-language:EN-US'>docker tag ${YOUR_IMAGE}
+${YOUR_LOGIN_SERVER}/${PATH]/${YOUR_IMAGE_NAME}<br>
+Example: docker tag nginx ${YOUR_LOGIN_SERVER}/samples/nginx<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span><span style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l3 level1 lfo11'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Push your
+image to Azure Container Registry<br>
+docker push </span><span style='font-size:10.5pt;line-height:107%;font-family:
+Consolas;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+color:black;background:#FAFAFA;mso-ansi-language:EN-US'>${YOUR_LOGIN_SERVER}/${PATH]/${YOUR_IMAGE_NAME}<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span><span style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l3 level1 lfo11'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.5pt;line-height:107%;
+font-family:Consolas;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:
+minor-bidi;color:black;background:#FAFAFA;mso-ansi-language:EN-US'>Go to your
+Azure Container Registry and validate your image is in your repository</span><span
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:53.4pt;mso-add-space:auto'><span
+style='mso-ansi-language:EN-US;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_17" o:spid="_x0000_i1029" type="#_x0000_t75" style='width:328pt;
+ height:257pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image014.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=328 height=257
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image014.png"
+v:shapes="Picture_x0020_17"><![endif]></span><span style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<h1 style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Calibri Light";mso-fareast-theme-font:major-latin;
+mso-bidi-font-family:"Calibri Light";mso-bidi-theme-font:major-latin;
+mso-ansi-language:EN-US'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='mso-ansi-language:EN-US'>Deploy an app using Azure IoT Edge<o:p></o:p></span></h1>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Return to
+Azure IoT Hub in portal, select IoT Edge from the menu and then choose your IoT
+Edge device from devices list.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>On “Device
+details” screen, click on “Set modules” option.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>In
+“Container Registry Settings” you must complete the fields based on your
+credentials.<br>
+<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_7" o:spid="_x0000_i1028" type="#_x0000_t75" style='width:392pt;
+ height:138pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image015.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=392 height=138
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image015.png"
+v:shapes="Picture_x0020_7"><![endif]></span><span style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Below in
+the same page, add a new deployment module and select “IoT Edge Module”<br>
+<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_11" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:376pt;
+ height:81pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image016.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=376 height=81
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image016.png"
+v:shapes="Picture_x0020_11"><![endif]></span><span style='mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Complete
+data related to your module and then click on “Save” button:<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level2 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='mso-ansi-language:EN-US'>Name</span></b><span style='mso-ansi-language:
+EN-US'>: name of your container image to be deployed in Edge device<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level2 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='mso-ansi-language:EN-US'>Image URI:</span></b><span style='mso-ansi-language:
+EN-US'> complete it with the full path of your image stored in Azure Example: mycontainerregistry.azurecr.io/myapp<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level2 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='mso-ansi-language:EN-US'>Container</span></b><span style='mso-ansi-language:
+EN-US'> <b style='mso-bidi-font-weight:normal'>Create</b> <b style='mso-bidi-font-weight:
+normal'>Options</b> (<b style='mso-bidi-font-weight:normal'>optional</b>): In
+this section you can describe the bindings required when you create your
+container. All this options must be defined in a json. <br>
+This is an example if you need bind ports and devices from the board to your
+container:<br>
+<i style='mso-bidi-font-style:normal'>{&quot;HostConfig&quot;:{&quot;PortBindings&quot;:{&quot;8597/tcp&quot;:[{&quot;HostPort&quot;:&quot;8597&quot;}],&quot;8598/tcp&quot;:[{&quot;HostPort&quot;:&quot;8598&quot;}]},&quot;Devices&quot;:[{&quot;PathOnHost&quot;:&quot;/dev/ttyTHS2&quot;,&quot;PathInContainer&quot;:&quot;/dev/ttyTHS2&quot;,&quot;CgroupPermissions&quot;:&quot;mrw&quot;}]}}</i><br>
+All options are available </span><span lang=ES-CL><a
+href="https://docs.docker.com/engine/api/v1.30/#operation/ContainerCreate"><span
+lang=EN-US style='mso-ansi-language:EN-US'>here</span></a></span><span
+style='mso-ansi-language:EN-US'>.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level2 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='mso-ansi-language:EN-US'>Restart</span></b><span style='mso-ansi-language:
+EN-US'> <b style='mso-bidi-font-weight:normal'>policy</b>: select one that best
+fit for you from the 4 choices defined.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level2 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='mso-ansi-language:EN-US'>Desired</span></b><span style='mso-ansi-language:
+EN-US'> <b style='mso-bidi-font-weight:normal'>status</b>: Select running.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:89.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level2 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+style='mso-ansi-language:EN-US'>Environment</span></b><span style='mso-ansi-language:
+EN-US'> <b style='mso-bidi-font-weight:normal'>variables</b>: add environment
+variables if needed.<br>
+<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_18" o:spid="_x0000_i1026" type="#_x0000_t75" style='width:311pt;
+ height:473pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image017.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=311 height=473
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image017.png"
+v:shapes="Picture_x0020_18"><![endif]></span><span style='mso-ansi-language:
+EN-US'><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Select
+“Next” button in the bottom. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>A screen
+to Specify Routes appears. In this we can define how modules can share messages
+among them and/or with the Azure IoT Hub on cloud.<br>
+</span><span lang=ES-CL style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_19" o:spid="_x0000_i1025" type="#_x0000_t75" style='width:442pt;
+ height:115pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image018.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=442 height=115
+src="Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image018.png"
+v:shapes="Picture_x0020_19"><![endif]></span><span style='mso-ansi-language:
+EN-US'><br>
+As we are deploying our first app we can use the default route presented. It
+means that all messages from all deployed modules must go to IoT Hub.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>h.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>Click on
+“Next” button.<o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>After
+“Review Deployment” appears, click on “Submit” button. This will start remote
+deployment of the application from Azure to Edge device. <o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:53.4pt;mso-add-space:
+auto;text-indent:-18.0pt;mso-list:l11 level1 lfo12'><![if !supportLists]><span
+style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-ansi-language:
+EN-US'><span style='mso-list:Ignore'>j.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-ansi-language:EN-US'>In the
+Edge device, validate if the image deployed is running:<br>
+</span><span style='font-size:10.5pt;line-height:107%;font-family:Consolas;
+mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+color:black;background:#FAFAFA;mso-ansi-language:EN-US'>sudo iotedge list</span><span
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:53.4pt;mso-add-space:auto'><span
+style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
