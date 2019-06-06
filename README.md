@@ -4,8 +4,6 @@ HOWTO
 
 DEPLOY APP TO NVIDIA TX2 BOARD USING AZURE IOT EDGE
 
-**Illegal HTML tag removed :**  
-
 This walkthrough is comprised on 4 main activities:
 
 1.     Install required software on Nvidia TX2 board
@@ -16,8 +14,6 @@ This walkthrough is comprised on 4 main activities:
 
 4.     Deploy an app using Azure IoT Edge
 
-**Illegal HTML tag removed :**  
-
 # Pre-requirements {#pre-requirements}
 
 ·       Nvidia TX2 board.
@@ -27,8 +23,6 @@ This walkthrough is comprised on 4 main activities:
 ·       Local computer running Linux in a graphical environment (necessary to connect TX2 card and install JetPack 3.3)
 
 ·       An Azure subscription and privileges to create resources.
-
-**Illegal HTML tag removed :**  
 
 # 1.   Install required software on Nvidia TX2 board {#1-install-required-software-on-nvidia-tx2-board}
 
@@ -46,23 +40,21 @@ d.     If needed, change permission to run the installation file: chmod +x JetPa
 
 e.     Run installation file ./ JetPack-L4T-3.3-linux-x64_b39.run
 
-f.      It is strongly recommended to define a new folder for all the software to be downloaded during the installation process. Those files will be required in next sections. ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image001.png)  
+f.      It is strongly recommended to define a new folder for all the software to be downloaded during the installation process. Those files will be required in next sections. ![](AzureIoTEdgeonTX2.fld/image001.png)
 
-g.     Select Jetson TX2 as development environment. ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image002.png)  
+g.     Select Jetson TX2 as development environment. ![](AzureIoTEdgeonTX2.fld/image002.png)
 
-h.     Add sudo password to stat installation ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image003.png)
+h.     Add sudo password to stat installation ![](AzureIoTEdgeonTX2.fld/image003.png)
 
-i.       Install all packages selecting “Full” installation in the upper right corner of the screen: ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image004.png)  
+i.       Install all packages selecting “Full” installation in the upper right corner of the screen: ![](AzureIoTEdgeonTX2.fld/image004.png)
 
-j.       If the TX2 board has connection to internet, select this network layout ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image005.png)
+j.       If the TX2 board has connection to internet, select this network layout ![](AzureIoTEdgeonTX2.fld/image005.png)
 
-k.     When a pop-up screen appears, select the steps to put TX2 board in the FORCE USB Recovery Mode. ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image006.png)  
+k.     When a pop-up screen appears, select the steps to put TX2 board in the FORCE USB Recovery Mode. ![](AzureIoTEdgeonTX2.fld/image006.png)
 
 l.       Installation of components will begin.
 
 m.   When installation is finished DO NOT select “Remove downloaded files” option. Those files will be needed in next sections.
-
-**Illegal HTML tag removed :**  
 
 ## ·      Installing CUDA libraries natively on TX2 board {#installing-cuda-libraries-natively-on-tx2-board}
 
@@ -86,39 +78,25 @@ This will install Azure IoT Edge in multi-architecture mode
 
 sudo dpkg --add-architecture armhf
 
-**Illegal HTML tag removed :**  
-
 # install compilers and libraries
 
 sudo apt-get install libc-bin libc-bin libc-dev-bin libc6 libc6:armhf libc6-dev libgcc1 libgcc1:armhf locales
 
-**Illegal HTML tag removed :**  
-
 wget http://ports.ubuntu.com/ubuntu-ports/pool/main/h/hostname/hostname_3.16ubuntu2_armhf.deb
-
-**Illegal HTML tag removed :**  
 
 sudo dpkg -i ./hostname_3.16ubuntu2_armhf.deb
 
-**Illegal HTML tag removed :**  
-
 wget [http://ftp.us.debian.org/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2q-2_armhf.deb](http://ftp.us.debian.org/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2q-2_armhf.deb)
-
-**Illegal HTML tag removed :**  
 
 sudo dpkg -i libssl1.0.2_1.0.2q-2_armhf.deb
 
 sudo apt-get install -f
-
-**Illegal HTML tag removed :**  
 
 # If you get any error message, it may be related to the fact you have a non-compatible
 
 # version of libssl like the libsll-dev version. In this case, just purge it with 
 
 # sudo apt-get purge libssl-dev
-
-**Illegal HTML tag removed :**  
 
 wget https://aka.ms/libiothsm-std-linux-armhf-latest -O libiothsm-std.deb
 
@@ -130,31 +108,27 @@ sudo dpkg -i ./iotedge.deb
 
 sudo apt-get install -f
 
-**Illegal HTML tag removed :**  
-
 ## ·      Create a device in Azure IoT Hub portal {#create-a-device-in-azure-iot-hub-portal}
 
 This step will create a device in Azure IoT Hub and configure it for running
 
 a.  Login in Azure portal and login with your credentials [https://ms.portal.azure.com](https://ms.portal.azure.com)
 
-b.  Go to IoT Hub service. If there isn’t an IoT Hub created, please follow this tutorial to deploy one instance:[https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal)
+b.  Go to IoT Hub service. If there isn’t an IoT Hub created, please follow this tutorial to deploy one instance: [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal)
 
-c.  Create an IoT Edge device. IoT Hub -&gt; IoT Edge -&gt; Add an IoT Device ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image007.png)  
+c.  Create an IoT Edge device. IoT Hub -&gt; IoT Edge -&gt; Add an IoT Device ![](AzureIoTEdgeonTX2.fld/image007.png)
 
-d.  Complete “Device ID” field with a name representative for the edge device. Then click on “Save” button. ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image008.png)  
+d.  Complete “Device ID” field with a name representative for the edge device. Then click on “Save” button. ![](AzureIoTEdgeonTX2.fld/image008.png)
 
-e.  After creation, select the new device create from the list and from “Device details” screen copy and take note of “Connection string (primary key)” field. It will be used in the next section. ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image009.png)
+e.  After creation, select the new device create from the list and from “Device details” screen copy and take note of “Connection string (primary key)” field. It will be used in the next section. ![](AzureIoTEdgeonTX2.fld/image009.png)
 
-f.  Define the arm images to use in IoT Edge native modules (EdgeAgent and EdgeHub). From previous screen, select “Set Modules” and then “Configure advance Edge Runtime settings” ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image010.png) Then change EdgeAgent and EdgeHub as follows
+f.  Define the arm images to use in IoT Edge native modules (EdgeAgent and EdgeHub). From previous screen, select “Set Modules” and then “Configure advance Edge Runtime settings” ![](AzureIoTEdgeonTX2.fld/image010.png) Then change EdgeAgent and EdgeHub as follows
 
-a.  EdgeHub: “mcr.microsoft.com/azureiotedge-hub:1.0” -&gt; “mcr.microsoft.com/azureiotedge-hub:1.0.4-linux-arm32v7” ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image011.png)  
+a.  EdgeHub: “mcr.microsoft.com/azureiotedge-hub:1.0” -&gt; “mcr.microsoft.com/azureiotedge-hub:1.0.4-linux-arm32v7” ![](AzureIoTEdgeonTX2.fld/image011.png)
 
-b.  EdgeHub: Scroll down and change “mcr.microsoft.com/azureiotedge-agent:1.0” -&gt; “mcr.microsoft.com/azureiotedge-agent:1.0.4-linux-arm32v7” ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image012.png)  
+b.  EdgeHub: Scroll down and change “mcr.microsoft.com/azureiotedge-agent:1.0” -&gt; “mcr.microsoft.com/azureiotedge-agent:1.0.4-linux-arm32v7” ![](AzureIoTEdgeonTX2.fld/image012.png)
 
 c.  Click on “SAVE” button.
-
-**Illegal HTML tag removed :**  
 
 ## ·      Configure Azure IoT Edge on TX2 {#configure-azure-iot-edge-on-tx2}
 
@@ -171,8 +145,6 @@ a.  Default: image: &quot;mcr.microsoft.com/azureiotedge-agent:1.0&quot;
 b.  Modified: image: &quot;mcr.microsoft.com/azureiotedge-agent:1.0.4-linux-arm32v7&quot;
 
 d.  Restart IoT Edge service: sudo systemctl restart iotedge
-
-**Illegal HTML tag removed :**  
 
 # 3.   Prepare containers to use board’s GPU capabilities {#3-prepare-containers-to-use-board-s-gpu-capabilities}
 
@@ -192,9 +164,7 @@ b.     Go to your recently deployed Container Registry in Azure and click on “
 
 c.     Take note on your Login Server name, Username and Password.
 
-![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image013.png)
-
-**Illegal HTML tag removed :**  
+![](AzureIoTEdgeonTX2.fld/image013.png)
 
 ## ·      Upload app image to Azure Container Registry {#upload-app-image-to-azure-container-registry}
 
@@ -206,19 +176,17 @@ c.     Push your image to Azure Container Registry docker push ${YOUR_LOGIN_SERV
 
 d.     Go to your Azure Container Registry and validate your image is in your repository
 
-![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image014.png)
+![](AzureIoTEdgeonTX2.fld/image014.png)
 
 # 4.   Deploy an app using Azure IoT Edge {#4-deploy-an-app-using-azure-iot-edge}
-
-**Illegal HTML tag removed :**  
 
 a.     Return to Azure IoT Hub in portal, select IoT Edge from the menu and then choose your IoT Edge device from devices list.
 
 b.     On “Device details” screen, click on “Set modules” option.
 
-c.     In “Container Registry Settings” you must complete the fields based on your credentials. ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image015.png)
+c.     In “Container Registry Settings” you must complete the fields based on your credentials. ![](AzureIoTEdgeonTX2.fld/image015.png)
 
-d.     Below in the same page, add a new deployment module and select “IoT Edge Module” ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image016.png)  
+d.     Below in the same page, add a new deployment module and select “IoT Edge Module” ![](AzureIoTEdgeonTX2.fld/image016.png)
 
 e.     Complete data related to your module and then click on “Save” button:
 
@@ -232,18 +200,14 @@ d.     **Restart** **policy**: select one that best fit for you from the 4 choic
 
 e.     **Desired** **status**: Select running.
 
-f.      **Environment** **variables**: add environment variables if needed. ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image017.png)  
+f.      **Environment** **variables**: add environment variables if needed. ![](AzureIoTEdgeonTX2.fld/image017.png)
 
 f.      Select “Next” button in the bottom.
 
-g.     A screen to Specify Routes appears. In this we can define how modules can share messages among them and/or with the Azure IoT Hub on cloud. ![](Deploy%20app%20using%20IoT%20Edge%20on%20TX2%20board%5b1%5d.fld/image018.png) As we are deploying our first app we can use the default route presented. It means that all messages from all deployed modules must go to IoT Hub.
+g.     A screen to Specify Routes appears. In this we can define how modules can share messages among them and/or with the Azure IoT Hub on cloud. ![](AzureIoTEdgeonTX2.fld/image018.png) As we are deploying our first app we can use the default route presented. It means that all messages from all deployed modules must go to IoT Hub.
 
 h.     Click on “Next” button.
 
 i.      After “Review Deployment” appears, click on “Submit” button. This will start remote deployment of the application from Azure to Edge device.
 
 j.      In the Edge device, validate if the image deployed is running: sudo iotedge list
-
-**Illegal HTML tag removed :**  
-
-**Illegal HTML tag removed :**
